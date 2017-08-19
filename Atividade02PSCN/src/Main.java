@@ -14,7 +14,7 @@ public class Main {
 						
 		System.out.println(f.toString());
 		System.out.println(fc.toString());
-		System.out.println(fh.toString());
+		System.out.println(fh.toString());		
 		
 		if (f.equals(fc)) {
 			System.out.println(f.getNome()+" e "+fc.getNome()+", são a mesma pessoa!");
