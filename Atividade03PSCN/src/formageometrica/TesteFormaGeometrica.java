@@ -12,7 +12,7 @@ public class TesteFormaGeometrica {
 		Retangulo r1 = new Retangulo();
 		Retangulo r2 = new Retangulo(4, 9);
 		Retangulo r3 = new Retangulo(3);
-		ColecaoFormas formasPSC = new ColecaoFormas();
+		ColecaoFormas formasPSC = new ColecaoFormas();		
 
 		try {
 			formasPSC.adicionarForma(q1);
@@ -26,9 +26,9 @@ public class TesteFormaGeometrica {
 
 		System.out.println(formasPSC.retornarAreaTotal());
 		System.out.println(formasPSC.perimetroTotal());
-		System.out.println(formasPSC.obterQuantidadeQuadrados());
-		formasPSC.obterColecaoRetangulos();
+		System.out.println(formasPSC.obterQuantidadeQuadrados());		
 
+		
 		for (FormaGeometrica fg : formasPSC.obterColecaoRetangulos()) {
 
 			if (fg instanceof Retangulo) {
