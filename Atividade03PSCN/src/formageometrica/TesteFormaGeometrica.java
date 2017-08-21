@@ -2,9 +2,9 @@ package formageometrica;
 
 /**
  *
- * @author aluno
+ * @author Saulo Maciel
  */
-public class Main {
+public class TesteFormaGeometrica {
 
 	public static void main(String[] args) {
 		Quadrado q1 = new Quadrado();

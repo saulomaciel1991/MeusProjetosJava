@@ -2,7 +2,7 @@ package formageometrica;
 
 /**
  *
- * @author aluno
+ * @author Saulo Maciel
  */
 public class Quadrado extends Retangulo {
 

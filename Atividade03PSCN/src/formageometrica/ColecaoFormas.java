@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author aluno
+ * @author Saulo Maciel
  */
 public class ColecaoFormas {
 
@@ -24,6 +24,7 @@ public class ColecaoFormas {
 
 	public Integer retornarAreaTotal() {
 		Integer soma = 0;
+		
 		for (FormaGeometrica forma : formas) {
 			soma += forma.calculaArea();
 		}
@@ -43,7 +44,7 @@ public class ColecaoFormas {
 		Retangulo retangulo = new Retangulo();
 		for (FormaGeometrica forma : formas) {
 			if (forma instanceof Retangulo) {
-				retangulo = (Retangulo) forma;
+				retangulo = (Retangulo) forma;				
 				if (retangulo.ehQuadrado()) {
 					qtdQuadrados++;
 				}
