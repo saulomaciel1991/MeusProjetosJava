@@ -1,2 +1,2 @@
 # MeusProjetosJava
-Projetos gerais usando Java, Java EE
+Projetos gerais usando Java SE, Java EE
