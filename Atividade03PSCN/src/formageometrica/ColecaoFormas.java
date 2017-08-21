@@ -9,9 +9,11 @@ import java.util.ArrayList;
 public class ColecaoFormas {
 
 	ArrayList<FormaGeometrica> formas;
+	ArrayList<Retangulo> retangulos;
 
 	public ColecaoFormas() {
 		formas = new ArrayList<>();
+		retangulos = new ArrayList<>();
 	}
 
 	public void adicionarForma(FormaGeometrica forma) throws AreaMenorQueOMinimoException {
@@ -24,7 +26,7 @@ public class ColecaoFormas {
 
 	public Integer retornarAreaTotal() {
 		Integer soma = 0;
-		
+
 		for (FormaGeometrica forma : formas) {
 			soma += forma.calculaArea();
 		}
@@ -44,7 +46,7 @@ public class ColecaoFormas {
 		Retangulo retangulo = new Retangulo();
 		for (FormaGeometrica forma : formas) {
 			if (forma instanceof Retangulo) {
-				retangulo = (Retangulo) forma;				
+				retangulo = (Retangulo) forma;
 				if (retangulo.ehQuadrado()) {
 					qtdQuadrados++;
 				}
@@ -54,7 +56,16 @@ public class ColecaoFormas {
 		return qtdQuadrados;
 	}
 
-	public ArrayList<FormaGeometrica> obterColecaoRetangulos() {
-		return this.formas;
+	public ArrayList<Retangulo> obterColecaoRetangulos() {		
+		retangulos = null;
+		Retangulo r = new Retangulo();
+		for (FormaGeometrica formaGeometrica : formas) {
+			if ((formaGeometrica instanceof Retangulo) && !(formaGeometrica instanceof Quadrado)) {
+				r = (Retangulo) formaGeometrica;
+				retangulos.add(r);
+			}
+		}
+
+		return retangulos;
 	}
 }

@@ -29,11 +29,12 @@ public class TesteFormaGeometrica {
 		System.out.println(formasPSC.obterQuantidadeQuadrados());		
 
 		
-		for (FormaGeometrica fg : formasPSC.obterColecaoRetangulos()) {
+		for (FormaGeometrica r : formasPSC.obterColecaoRetangulos()) {
 
-			if (fg instanceof Retangulo) {
+			/*if (fg instanceof Retangulo) {
 				System.out.println(((Retangulo) fg).getAltura() + " " + ((Retangulo) fg).getComprimento());
-			}
+			}*/
+			System.out.println(((Retangulo)r).getAltura()+" "+((Retangulo)r).getComprimento());
 
 		}
 
