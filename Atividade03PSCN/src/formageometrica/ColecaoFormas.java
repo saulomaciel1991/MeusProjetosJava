@@ -56,8 +56,7 @@ public class ColecaoFormas {
 		return qtdQuadrados;
 	}
 
-	public ArrayList<Retangulo> obterColecaoRetangulos() {		
-		retangulos = null;
+	public ArrayList<Retangulo> obterColecaoRetangulos() {				
 		Retangulo r = new Retangulo();
 		for (FormaGeometrica formaGeometrica : formas) {
 			if ((formaGeometrica instanceof Retangulo) && !(formaGeometrica instanceof Quadrado)) {

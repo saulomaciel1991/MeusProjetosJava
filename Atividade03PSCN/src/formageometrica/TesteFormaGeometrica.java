@@ -30,12 +30,7 @@ public class TesteFormaGeometrica {
 
 		
 		for (FormaGeometrica r : formasPSC.obterColecaoRetangulos()) {
-
-			/*if (fg instanceof Retangulo) {
-				System.out.println(((Retangulo) fg).getAltura() + " " + ((Retangulo) fg).getComprimento());
-			}*/
 			System.out.println(((Retangulo)r).getAltura()+" "+((Retangulo)r).getComprimento());
-
 		}
 
 	}
