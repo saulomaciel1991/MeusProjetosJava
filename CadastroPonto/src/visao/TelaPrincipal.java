@@ -4,13 +4,10 @@
  * and open the template in the editor.
  */
 package visao;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.Image;
+
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
-import com.itextpdf.text.Font;
-import com.itextpdf.text.FontFactory;
 import com.sun.javafx.font.FontFactory;
 import controle.ClsDataHora;
 import java.awt.Desktop;
@@ -33,31 +30,29 @@ import modeloDAO.DaoUsuario;
  * @author Gustavo
  */
 public class TelaPrincipal extends javax.swing.JFrame {
-        ClsDataHora objDataHora = new ClsDataHora();
-        ConexaoBD conecta = new ConexaoBD();
-        DaoUsuario contUsu = new DaoUsuario();
-        BeansUsuario modusu = new BeansUsuario();
-        BeansApontamento apont = new BeansApontamento();
-        DaoApontamento daoapont = new DaoApontamento();
-        ApontamentoLogin apolog = new ApontamentoLogin();
-        DaoApontamentoLogin daoapontlog = new DaoApontamentoLogin();
-        Relatorio enviatext;
+
+    ClsDataHora objDataHora = new ClsDataHora();
+    ConexaoBD conecta = new ConexaoBD();
+    DaoUsuario contUsu = new DaoUsuario();
+    BeansUsuario modusu = new BeansUsuario();
+    BeansApontamento apont = new BeansApontamento();
+    DaoApontamento daoapont = new DaoApontamento();
+    ApontamentoLogin apolog = new ApontamentoLogin();
+    DaoApontamentoLogin daoapontlog = new DaoApontamentoLogin();
+    Relatorio enviatext;
 
     /**
      * Creates new form TelaPrincipal
-     */ public void recebendo(Integer recebe){
+     */
+    public void recebendo(Integer recebe) {
         jTextFieldPreccpCad2.setText(recebe.toString());
         jTextFieldPreccp.setText(recebe.toString());
         jTextFieldRelatorio.setText(recebe.toString());
     }
-        
+
     public TelaPrincipal() {
         conecta.conexao();
         initComponents();
-        
-       
-        
-       
 
     }
 
@@ -760,20 +755,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldDatausuActionPerformed
 
     private void jButtonPreccp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPreccp1ActionPerformed
-   /*
-            modusu.setPosto(jTextFieldPostousu.getText());
-            modusu.setPreccp(jTextFieldprec.getText());
-            modusu.setNomeUsu(jTextFieldNomeusu.getText());
-            modusu.setHoraLimite1(Integer.parseInt(jTextFieldHora1.getText()));
-            modusu.setHoraLimite2(Integer.parseInt(jTextFieldHora2.getText()));
-            modusu.setHora(Integer.parseInt(jTextFieldHoralocalusu.getText()));
-            modusu.setJustificativa(jTextFieldJustificativa.getText());
-            contUsu.Pontear(modusu);
-            JOptionPane.showMessageDialog(null, "Ponteamendo realizado com sucesso!");  */                                         
+        /*
+         modusu.setPosto(jTextFieldPostousu.getText());
+         modusu.setPreccp(jTextFieldprec.getText());
+         modusu.setNomeUsu(jTextFieldNomeusu.getText());
+         modusu.setHoraLimite1(Integer.parseInt(jTextFieldHora1.getText()));
+         modusu.setHoraLimite2(Integer.parseInt(jTextFieldHora2.getText()));
+         modusu.setHora(Integer.parseInt(jTextFieldHoralocalusu.getText()));
+         modusu.setJustificativa(jTextFieldJustificativa.getText());
+         contUsu.Pontear(modusu);
+         JOptionPane.showMessageDialog(null, "Ponteamendo realizado com sucesso!");  */
     }//GEN-LAST:event_jButtonPreccp1ActionPerformed
 
     private void jButtonPreccpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPreccpActionPerformed
-        
+
     }//GEN-LAST:event_jButtonPreccpActionPerformed
 
     private void jTextFieldNomeCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeCadActionPerformed
@@ -790,15 +785,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         modusu.setHoraEntrada(Integer.parseInt(jTextFieldHora1.getText()));
         modusu.setHoraSaida(Integer.parseInt(jTextFieldHora1.getText()));
         modusu.setDgtFamiliar(jTextFieldDgtfamiliar.getText());
-        contUsu.Editar(modusu);  
-        int resposta =0;
-       // resposta = JOptionPane.showMessageDialog(null, "Por favor, faça o logoff e entre com seu login e senha novamente.");
+        contUsu.Editar(modusu);
+        int resposta = 0;
+        // resposta = JOptionPane.showMessageDialog(null, "Por favor, faça o logoff e entre com seu login e senha novamente.");
         JOptionPane.showMessageDialog(null, "Por favor, faça o logoff e entre com seu login e senha novamente.");
-        
+
     }//GEN-LAST:event_jButtonCadasdroActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-   
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextFieldHoraLimite2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldHoraLimite2ActionPerformed
@@ -806,31 +801,31 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldHoraLimite2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-           /* jTextFieldHoralocalusu.setText(objDataHora.MostraHora());
-            apont.setPontpostousu(jTextFieldPostousu.getText());
-            apont.setPontnomeusu(jTextFieldNomeusu.getText());
-            apont.setPontpreccpusu(jTextFieldprec.getText());
-            apont.setPonthora(Integer.parseInt(jTextFieldHora1.getText()));
-            apont.setPonthoralocal(Integer.parseInt(jTextFieldHoralocalusu.getText()));
-            apont.setPontdata(jTextFieldDatausu.getText());
-            apont.setPontjustificativa(jTextFieldJustificativa.getText());
-            apont.setPonthora2(Integer.parseInt(jTextFieldHora2.getText()));
-            daoapont.Salvar(apont);*/
+        /* jTextFieldHoralocalusu.setText(objDataHora.MostraHora());
+         apont.setPontpostousu(jTextFieldPostousu.getText());
+         apont.setPontnomeusu(jTextFieldNomeusu.getText());
+         apont.setPontpreccpusu(jTextFieldprec.getText());
+         apont.setPonthora(Integer.parseInt(jTextFieldHora1.getText()));
+         apont.setPonthoralocal(Integer.parseInt(jTextFieldHoralocalusu.getText()));
+         apont.setPontdata(jTextFieldDatausu.getText());
+         apont.setPontjustificativa(jTextFieldJustificativa.getText());
+         apont.setPonthora2(Integer.parseInt(jTextFieldHora2.getText()));
+         daoapont.Salvar(apont);*/
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         //////////////////////tela do apontamento///////////////
         modusu.setPesquisar(jTextFieldprec.getText());
-      BeansUsuario model = contUsu.buscarUsuario(modusu);
-      jTextFieldDgtfamiliar.setText(String.valueOf(model.getPreccp()));
-      jTextFieldSenhaCad.setText(model.getSenha());
-      jTextFieldNomeCad.setText(model.getNome());
-      jTextFieldSetorCad.setText(model.getSetor());
-      jComboBoxSexocad.setSelectedItem(model.getSexo());
-      jComboBoxPostocad.setSelectedItem(model.getPosto());
-      jTextFieldHoraLimite1.setText(String.valueOf(model.getHoraEntrada()));
-      jTextFieldHoraLimite2.setText(String.valueOf(model.getHoraSaida()));
-      jTextFieldDgtfam.setText(model.getDgtFamiliar());
+        BeansUsuario model = contUsu.buscarUsuario(modusu);
+        jTextFieldDgtfamiliar.setText(String.valueOf(model.getPreccp()));
+        jTextFieldSenhaCad.setText(model.getSenha());
+        jTextFieldNomeCad.setText(model.getNome());
+        jTextFieldSetorCad.setText(model.getSetor());
+        jComboBoxSexocad.setSelectedItem(model.getSexo());
+        jComboBoxPostocad.setSelectedItem(model.getPosto());
+        jTextFieldHoraLimite1.setText(String.valueOf(model.getHoraEntrada()));
+        jTextFieldHoraLimite2.setText(String.valueOf(model.getHoraSaida()));
+        jTextFieldDgtfam.setText(model.getDgtFamiliar());
         jTextFieldNomeCad.setEnabled(true);
         jTextFieldDgtfamiliar.setEnabled(true);
         jTextFieldSenhaCad.setEnabled(true);
@@ -840,32 +835,32 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButtonCadasdro.setEnabled(true);
         jInternalFrame1.dispose();
         ///////////////////////Tela de Editar do Usuario//////////////////////////////
-        modusu.setPesquisar(jTextFieldprec.getText());      
-        jTextFieldprec.setText(String.valueOf(model.getPreccp()));        
-        jTextFieldNomeusu.setText(model.getNome());       
+        modusu.setPesquisar(jTextFieldprec.getText());
+        jTextFieldprec.setText(String.valueOf(model.getPreccp()));
+        jTextFieldNomeusu.setText(model.getNome());
         jTextFieldPostousu.setText(model.getPosto());
         jTextFieldHora1.setText(String.valueOf(model.getHoraEntrada()));
-       jTextFieldHora2.setText(String.valueOf(model.getHoraSaida()));
+        jTextFieldHora2.setText(String.valueOf(model.getHoraSaida()));
         jTextFieldDatausu.setText(objDataHora.MostraData());
         jTextFieldHoralocalusu.setText(objDataHora.MostraHora());
         jTextFieldDgtfamiliar.setText(model.getDgtFamiliar());
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
- String PDF = "Apontamento.pdf";
+        /*String PDF = "Apontamento.pdf";
         Document documentoPDF = new Document();
         try {
             //criar uma instancia do documento
             PdfWriter.getInstance(documentoPDF, new FileOutputStream(PDF));
-             //abrir o documento
+            //abrir o documento
             documentoPDF.open();
             //tamanho do papel
-            documentoPDF.setPageSize(PageSize.A4);                     
+            documentoPDF.setPageSize(PageSize.A4);
             //adcionando o logo
             Image imagem = Image.getInstance("C:\\Users\\Admin\\Music\\Dias\\Ministerio da defesa.jpg");
             imagem.setAlignment(1);
             documentoPDF.add(imagem);
-            Paragraph m1 = new Paragraph("MINISTÉRIO BRASILEIRO", FontFactory.getFont(FontFactory.TIMES, 12, Font.BOLD));   
+            Paragraph m1 = new Paragraph("MINISTÉRIO BRASILEIRO", FontFactory.getFont(FontFactory.TIMES, 12, Font.BOLD));
             m1.setAlignment(1);
             Paragraph m2 = new Paragraph("EXÉRCITO BRASILEIRO", FontFactory.getFont(FontFactory.TIMES, 12, Font.BOLD));
             m2.setAlignment(1);
@@ -884,53 +879,44 @@ public class TelaPrincipal extends javax.swing.JFrame {
             documentoPDF.add(pularlinha);
             //alinhamento centralizado da imagem
             //criar novo paragrafo  
-            Paragraph p = new Paragraph("RELAÇÃO DE APONTAMENTOS REFERENTE AO MÊS "+objDataHora.MostraDataMes()+"", FontFactory.getFont(FontFactory.TIMES, 13, Font.BOLD));
+            Paragraph p = new Paragraph("RELAÇÃO DE APONTAMENTOS REFERENTE AO MÊS " + objDataHora.MostraDataMes() + "", FontFactory.getFont(FontFactory.TIMES, 13, Font.BOLD));
             Paragraph p2 = new Paragraph(" ");
             //alinhamento centralizado do texto
             p.setAlignment(1);
             //cabeçalho do usuario
-            Paragraph p5 = new Paragraph("Posto: "+modusu.getPosto()+"", FontFactory.getFont(FontFactory.TIMES, 11, Font.BOLD));
-            Paragraph p1 = new Paragraph("Nome: "+modusu.getNome()+"", FontFactory.getFont(FontFactory.TIMES, 11, Font.BOLD));
-            Paragraph p3 = new Paragraph("PREC-CP: "+modusu.getPreccp()+"", FontFactory.getFont(FontFactory.TIMES, 11, Font.BOLD));
-            Paragraph p4 = new Paragraph("Horário limite para o apontamento: De "+modusu.getHoraEntrada()+" Até "+modusu.getHoraSaida()+".", FontFactory.getFont(FontFactory.TIMES, 11, Font.BOLD));           
+            Paragraph p5 = new Paragraph("Posto: " + modusu.getPosto() + "", FontFactory.getFont(FontFactory.TIMES, 11, Font.BOLD));
+            Paragraph p1 = new Paragraph("Nome: " + modusu.getNome() + "", FontFactory.getFont(FontFactory.TIMES, 11, Font.BOLD));
+            Paragraph p3 = new Paragraph("PREC-CP: " + modusu.getPreccp() + "", FontFactory.getFont(FontFactory.TIMES, 11, Font.BOLD));
+            Paragraph p4 = new Paragraph("Horário limite para o apontamento: De " + modusu.getHoraEntrada() + " Até " + modusu.getHoraSaida() + ".", FontFactory.getFont(FontFactory.TIMES, 11, Font.BOLD));
             //Tabela de Apontamento
           /*  PdfPTable table = null;
-            preenchertab("SELECT*FROM apontamento order by pont_data");
+             preenchertab("SELECT*FROM apontamento order by pont_data");
             
-            PdfPCell cel1 = new PdfPCell(new Paragraph("Data"));//tabela apontamento
-            PdfPCell cel2 = new PdfPCell(new Paragraph("Hora Login"));//tabela login
-            PdfPCell cel3 = new PdfPCell(new Paragraph("Hora Apontada"));//tabela apontamento
-            PdfPCell cel4 = new PdfPCell(new Paragraph("Justificativa"));//tabela apontamento*/
-            
+             PdfPCell cel1 = new PdfPCell(new Paragraph("Data"));//tabela apontamento
+             PdfPCell cel2 = new PdfPCell(new Paragraph("Hora Login"));//tabela login
+             PdfPCell cel3 = new PdfPCell(new Paragraph("Hora Apontada"));//tabela apontamento
+             PdfPCell cel4 = new PdfPCell(new Paragraph("Justificativa"));//tabela apontamento*/
+
             /*for (ApontamentoLogin pessoa : listp) 
-                cel1 = new PdfPCell(new Paragraph(pessoa.getDataAponLog()+""));
-                cel2 = new PdfPCell(new Paragraph(pessoa.getHoraLog()));
-                cel3 = new PdfPCell(new Paragraph(pessoa.getHoraApont()+""));
-                cel4 = new PdfPCell(new Paragraph(pessoa.getJustificativaApont()+"")); */
-            
-                
+             cel1 = new PdfPCell(new Paragraph(pessoa.getDataAponLog()+""));
+             cel2 = new PdfPCell(new Paragraph(pessoa.getHoraLog()));
+             cel3 = new PdfPCell(new Paragraph(pessoa.getHoraApont()+""));
+             cel4 = new PdfPCell(new Paragraph(pessoa.getJustificativaApont()+""));
           //  documentoPDF.add(p);
-          //  p = new Paragraph("  ");
-           // documentoPDF.add(p);
-            
+            //  p = new Paragraph("  ");
+            // documentoPDF.add(p);
             documentoPDF.add(p);
             documentoPDF.add(p2);
             documentoPDF.add(p5);
             documentoPDF.add(p1);
             documentoPDF.add(p3);
-                documentoPDF.add(p4);
+            documentoPDF.add(p4);
             documentoPDF.close();
             Desktop.getDesktop().open(new File(PDF));
         } catch (Exception e) {
-        }       
-        
-    
-        
-        
-        
-        
-        
-        
+        }*/
+
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -938,13 +924,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         //rela.setVisible(true);
         jTextFieldPreccpCad2.getText();
         if (enviatext == null) {
-                    enviatext = new Relatorio();
-                    enviatext.setVisible(true);
-                    enviatext.recebendo(jTextFieldRelatorio.getText());
-                } else {
-                    enviatext.setVisible(true);
-                    enviatext.setState(Relatorio.NORMAL);
-                }
+            enviatext = new Relatorio();
+            enviatext.setVisible(true);
+            enviatext.recebendo(jTextFieldRelatorio.getText());
+        } else {
+            enviatext.setVisible(true);
+            enviatext.setState(Relatorio.NORMAL);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextFieldHoraSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldHoraSaidaActionPerformed
@@ -955,7 +941,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldDgtfamActionPerformed
 
-    
     /**
      * @param args the command line arguments
      */
@@ -994,7 +979,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
     }
 
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
