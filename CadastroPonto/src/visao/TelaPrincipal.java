@@ -4,13 +4,9 @@
  * and open the template in the editor.
  */
 package visao;
-import com.itextpdf.text.Document;
-import com.itextpdf.text.Image;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
-import com.itextpdf.text.Font;
-import com.itextpdf.text.FontFactory;
 import com.sun.javafx.font.FontFactory;
 import controle.ClsDataHora;
 import java.awt.Desktop;
