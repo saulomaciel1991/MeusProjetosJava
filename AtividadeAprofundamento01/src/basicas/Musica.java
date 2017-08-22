@@ -5,7 +5,7 @@ public class Musica {
 	private String nomeArtista;
 	private String nomeCompositor;
 	private Integer tempo;
-
+	//Nada a dizer
 	public String getNomeMusica() {
 		return nomeMusica;
 	}
