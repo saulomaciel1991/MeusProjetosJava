@@ -4,20 +4,33 @@ public class AparelhoDeSom extends Eletronico {
 	private Double potencia;
 	private Player player;
 	private Integer volume;
-	private String funcao;
+	private String controlafor;
 
-	public void aumentarVolume(){
-		
+	public void aumentarVolume() {
+		if (this.getVolume() < 20) {
+			this.setVolume(volume++);
+		}
 	}
-	
-	public void diminuirVolume(){
-		
+
+	public void diminuirVolume() {
+		if (this.getVolume() > 0) {
+			this.setVolume(volume--);
+		}
 	}
-	
-	public void alterarFuncao(){
-		
+
+	public void alterarFuncao(String funcao) {
+		if (funcao == "CD") {
+			System.out.println("Alterado para CD player!");
+		}else{
+			if(funcao == "USB"){
+				System.out.println("Alterado para USB!");
+			}else{
+				this.setPlayer(null);
+				System.out.println("Alterado para rádio!");
+			}
+		}
 	}
-	
+
 	public Double getPotencia() {
 		return potencia;
 	}
@@ -42,12 +55,12 @@ public class AparelhoDeSom extends Eletronico {
 		this.volume = volume;
 	}
 
-	public String getFuncao() {
-		return funcao;
+	public String getControlafor() {
+		return controlafor;
 	}
 
-	public void setFuncao(String funcao) {
-		this.funcao = funcao;
+	public void setControlafor(String controlafor) {
+		this.controlafor = controlafor;
 	}
 
 }
