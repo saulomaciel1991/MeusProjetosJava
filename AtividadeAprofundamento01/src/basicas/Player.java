@@ -1,23 +1,25 @@
 package basicas;
 
-public class Player<E>{
+import util.EletronicoDesligadoException;
+
+public class Player<E> {
 
 	private Integer numeroMusicaAtual;
 	private Integer tempoMusicaAtual;
 
-	public void play() {
+	public void play() throws EletronicoDesligadoException {
 		this.setNumeroMusicaAtual(1);
 	}
 
-	public void stop() {
+	public void stop() throws EletronicoDesligadoException {
 
 	}
 
-	public void avancarMusica() {
+	public void avancarMusica() throws EletronicoDesligadoException {
 
 	}
 
-	public void recuarMusica() {
+	public void recuarMusica() throws EletronicoDesligadoException {
 
 	}
 

@@ -1,12 +1,14 @@
 package basicas;
 
+import util.EletronicoDesligadoException;
+
 public class AparelhoDeSom extends Eletronico {
 	private Double potencia;
 	private Player<?> player;
 	private Integer volume;
 	private String controlador;
 
-	public void aumentarVolume() {
+	public void aumentarVolume() throws EletronicoDesligadoException {
 
 		if ((this.getVolume() == null) && (this.getLigado())) {
 			this.setVolume(0);
@@ -28,7 +30,7 @@ public class AparelhoDeSom extends Eletronico {
 		}
 	}
 
-	public void diminuirVolume() {
+	public void diminuirVolume() throws EletronicoDesligadoException {
 		if ((this.getVolume() == null) && (this.getLigado())) {
 			this.setVolume(0);
 			if (this.getVolume() > 0) {
@@ -49,7 +51,7 @@ public class AparelhoDeSom extends Eletronico {
 		}
 	}
 
-	public void alterarFuncao(String funcao) {
+	public void alterarFuncao(String funcao) throws EletronicoDesligadoException {
 		if (funcao == "CD") {
 			CDPlayer cdPlayer = new CDPlayer();
 			this.setPlayer(cdPlayer);

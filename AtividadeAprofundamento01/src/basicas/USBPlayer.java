@@ -2,17 +2,19 @@ package basicas;
 
 import java.util.ArrayList;
 
+import util.EletronicoDesligadoException;
+
 public class USBPlayer extends Player<Object> {
 
 	private ArrayList<Musica> musicas;
 
 	@Override
-	public void avancarMusica() {
+	public void avancarMusica() throws EletronicoDesligadoException {
 		super.avancarMusica();
 	}
 
 	@Override
-	public void recuarMusica() {
+	public void recuarMusica() throws EletronicoDesligadoException {
 		super.recuarMusica();
 	}
 
