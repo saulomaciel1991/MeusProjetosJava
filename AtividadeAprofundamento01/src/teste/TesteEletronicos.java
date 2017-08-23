@@ -10,7 +10,7 @@ public class TesteEletronicos {
 	public static void main(String[] args) {
 
 		// Declaração das variaveis
-		AparelhoDeSom xyz = new AparelhoDeSom();
+		AparelhoDeSom xyz = new AparelhoDeSom();		
 		CD cd = new CD();
 		Musica m1 = new Musica("Todo Carnaval tem seu fim", "Los Hermanos", "Marcelo Camelo", 252);
 		Musica m2 = new Musica("A flor", "Los Hermanos", "Rodrigo Amarante", 210);
@@ -19,7 +19,7 @@ public class TesteEletronicos {
 		Musica m5 = new Musica("Casa pré-fabricada", "Los Hermanos", "Marcelo Camelo", 245);
 		ArrayList<Musica> musicas = new ArrayList<>();
 
-		// Chamadas a metodos
+		// Chamadas a metodos		
 		musicas.add(m1);
 		musicas.add(m2);
 		musicas.add(m3);
@@ -32,6 +32,7 @@ public class TesteEletronicos {
 		xyz.setMarca("Sony");
 		xyz.setPotencia(60.0);		
 		xyz.ligar();
+		
 			
 	}
 

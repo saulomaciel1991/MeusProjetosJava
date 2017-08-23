@@ -5,8 +5,7 @@ import util.EletronicoDesligadoException;
 public class AparelhoDeSom extends Eletronico {
 	private Double potencia;
 	private Player<?> player;
-	private Integer volume;
-	private String controlador;
+	private Integer volume;	
 
 	public AparelhoDeSom() {
 		super();
@@ -41,14 +40,14 @@ public class AparelhoDeSom extends Eletronico {
 		}
 	}
 
-	public void alterarFuncao(String funcao) throws EletronicoDesligadoException {
+	public void alterarFuncao(Funcao funcao) throws EletronicoDesligadoException {
 		if (this.getLigado()) {
-			if (funcao == "CD") {
+			if (funcao == Funcao.CD) {
 				CDPlayer cdPlayer = new CDPlayer();
 				this.setPlayer(cdPlayer);
 				System.out.println("Alterado para CD player!");
 			} else {
-				if (funcao == "USB") {
+				if (funcao == Funcao.USB) {
 					USBPlayer usbPlayer = new USBPlayer();
 					this.setPlayer(usbPlayer);
 					System.out.println("Alterado para USB!");
@@ -84,14 +83,6 @@ public class AparelhoDeSom extends Eletronico {
 
 	public void setVolume(Integer volume) {
 		this.volume = volume;
-	}
-
-	public String getControlador() {
-		return controlador;
-	}
-
-	public void setControlador(String controlador) {
-		this.controlador = controlador;
 	}
 
 }
