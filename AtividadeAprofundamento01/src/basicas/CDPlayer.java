@@ -1,6 +1,6 @@
 package basicas;
 
-public class CDPlayer extends Player{
+public class CDPlayer extends Player<Object>{
 	private CD CDCarregado;
 	
 	public void colocarCD(CD CDCarregado){

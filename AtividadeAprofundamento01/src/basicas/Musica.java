@@ -1,10 +1,23 @@
 package basicas;
 
 public class Musica {
+
 	private String nomeMusica;
 	private String nomeArtista;
 	private String nomeCompositor;
 	private Integer tempoMusica;
+
+	public Musica(String nomeMusica, String nomeArtista, String nomeCompositor, Integer tempoMusica) {
+		super();
+		this.nomeMusica = nomeMusica;
+		this.nomeArtista = nomeArtista;
+		this.nomeCompositor = nomeCompositor;
+		this.tempoMusica = tempoMusica;
+	}
+	
+	public Musica(){
+		super();
+	}
 
 	public String getNomeMusica() {
 		return nomeMusica;

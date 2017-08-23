@@ -1,6 +1,6 @@
 package basicas;
 
-public class Player {
+public class Player<E>{
 
 	private Integer numeroMusicaAtual;
 	private Integer tempoMusicaAtual;

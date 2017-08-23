@@ -7,10 +7,12 @@ public class Eletronico {
 	
 	public void ligar(){		
 		this.setLigado(true);
+		System.out.println("Ligado!");
 	}
 	
 	public void desligar(){
 		this.setLigado(false);
+		System.out.println("Desligado!");
 	}
 
 	public String getMarca() {

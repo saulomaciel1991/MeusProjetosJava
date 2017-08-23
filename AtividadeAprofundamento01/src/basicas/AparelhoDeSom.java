@@ -2,29 +2,64 @@ package basicas;
 
 public class AparelhoDeSom extends Eletronico {
 	private Double potencia;
-	private Player player;
+	private Player<?> player;
 	private Integer volume;
-	private String controlafor;
+	private String controlador;
 
 	public void aumentarVolume() {
-		if (this.getVolume() < 20) {
-			this.setVolume(volume++);
+
+		if ((this.getVolume() == null) && (this.getLigado())) {
+			this.setVolume(0);
+			if (this.getVolume() < 20) {
+				this.setVolume(this.getVolume() + 1);
+				System.out.println("Volume " + this.getVolume());
+			} else {
+				System.out.println("Você atingiu o volume maximo!");
+			}
+		} else {
+			if (this.getLigado()) {
+				if (this.getVolume() < 20) {
+					this.setVolume(this.getVolume() + 1);
+					System.out.println("Volume " + this.getVolume());
+				} else {
+					System.out.println("Você atingiu o volume maximo!");
+				}
+			}
 		}
 	}
 
 	public void diminuirVolume() {
-		if (this.getVolume() > 0) {
-			this.setVolume(volume--);
+		if ((this.getVolume() == null) && (this.getLigado())) {
+			this.setVolume(0);
+			if (this.getVolume() > 0) {
+				this.setVolume(this.getVolume() - 1);
+				System.out.println("Volume " + this.getVolume());
+			} else {
+				System.out.println("Você atingiu o volume minimo!");
+			}
+		} else {
+			if (this.getLigado()) {
+				if (this.getVolume() < 20) {
+					this.setVolume(this.getVolume() - 1);
+					System.out.println("Volume " + this.getVolume());
+				} else {
+					System.out.println("Você atingiu o volume minimo!");
+				}
+			}
 		}
 	}
 
 	public void alterarFuncao(String funcao) {
 		if (funcao == "CD") {
+			CDPlayer cdPlayer = new CDPlayer();
+			this.setPlayer(cdPlayer);
 			System.out.println("Alterado para CD player!");
-		}else{
-			if(funcao == "USB"){
+		} else {
+			if (funcao == "USB") {
+				USBPlayer usbPlayer = new USBPlayer();
+				this.setPlayer(usbPlayer);
 				System.out.println("Alterado para USB!");
-			}else{
+			} else {
 				this.setPlayer(null);
 				System.out.println("Alterado para rádio!");
 			}
@@ -39,11 +74,11 @@ public class AparelhoDeSom extends Eletronico {
 		this.potencia = potencia;
 	}
 
-	public Player getPlayer() {
+	public Player<?> getPlayer() {
 		return player;
 	}
 
-	public void setPlayer(Player player) {
+	public void setPlayer(Player<?> player) {
 		this.player = player;
 	}
 
@@ -55,12 +90,12 @@ public class AparelhoDeSom extends Eletronico {
 		this.volume = volume;
 	}
 
-	public String getControlafor() {
-		return controlafor;
+	public String getControlador() {
+		return controlador;
 	}
 
-	public void setControlafor(String controlafor) {
-		this.controlafor = controlafor;
+	public void setControlador(String controlador) {
+		this.controlador = controlador;
 	}
 
 }
