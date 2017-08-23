@@ -8,10 +8,14 @@ public class AparelhoDeSom extends Eletronico {
 	private Integer volume;
 	private String controlador;
 
+	public AparelhoDeSom() {
+		super();
+		this.setVolume(0);
+	}
+
 	public void aumentarVolume() throws EletronicoDesligadoException {
 
-		if ((this.getVolume() == null) && (this.getLigado())) {
-			this.setVolume(0);
+		if (this.getLigado()) {
 			if (this.getVolume() < 20) {
 				this.setVolume(this.getVolume() + 1);
 				System.out.println("Volume " + this.getVolume());
@@ -19,20 +23,13 @@ public class AparelhoDeSom extends Eletronico {
 				System.out.println("Você atingiu o volume maximo!");
 			}
 		} else {
-			if (this.getLigado()) {
-				if (this.getVolume() < 20) {
-					this.setVolume(this.getVolume() + 1);
-					System.out.println("Volume " + this.getVolume());
-				} else {
-					System.out.println("Você atingiu o volume maximo!");
-				}
-			}
+			throw new EletronicoDesligadoException();
 		}
+
 	}
 
 	public void diminuirVolume() throws EletronicoDesligadoException {
-		if ((this.getVolume() == null) && (this.getLigado())) {
-			this.setVolume(0);
+		if (this.getLigado()) {
 			if (this.getVolume() > 0) {
 				this.setVolume(this.getVolume() - 1);
 				System.out.println("Volume " + this.getVolume());
@@ -40,31 +37,28 @@ public class AparelhoDeSom extends Eletronico {
 				System.out.println("Você atingiu o volume minimo!");
 			}
 		} else {
-			if (this.getLigado()) {
-				if (this.getVolume() < 20) {
-					this.setVolume(this.getVolume() - 1);
-					System.out.println("Volume " + this.getVolume());
-				} else {
-					System.out.println("Você atingiu o volume minimo!");
-				}
-			}
+			throw new EletronicoDesligadoException();
 		}
 	}
 
 	public void alterarFuncao(String funcao) throws EletronicoDesligadoException {
-		if (funcao == "CD") {
-			CDPlayer cdPlayer = new CDPlayer();
-			this.setPlayer(cdPlayer);
-			System.out.println("Alterado para CD player!");
-		} else {
-			if (funcao == "USB") {
-				USBPlayer usbPlayer = new USBPlayer();
-				this.setPlayer(usbPlayer);
-				System.out.println("Alterado para USB!");
+		if (this.getLigado()) {
+			if (funcao == "CD") {
+				CDPlayer cdPlayer = new CDPlayer();
+				this.setPlayer(cdPlayer);
+				System.out.println("Alterado para CD player!");
 			} else {
-				this.setPlayer(null);
-				System.out.println("Alterado para rádio!");
+				if (funcao == "USB") {
+					USBPlayer usbPlayer = new USBPlayer();
+					this.setPlayer(usbPlayer);
+					System.out.println("Alterado para USB!");
+				} else {
+					this.setPlayer(null);
+					System.out.println("Alterado para rádio!");
+				}
 			}
+		}else{
+			throw new EletronicoDesligadoException();
 		}
 	}
 

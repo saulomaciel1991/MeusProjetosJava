@@ -3,6 +3,7 @@ package teste;
 import java.util.ArrayList;
 
 import basicas.*;
+import util.EletronicoDesligadoException;
 
 public class TesteEletronicos {
 
@@ -29,15 +30,9 @@ public class TesteEletronicos {
 		cd.setMusicas(musicas);
 		cd.setNomeArtista("Los Hermanos");
 		xyz.setMarca("Sony");
-		xyz.setPotencia(60.0);
-		
-		xyz.ligar();			
-		xyz.aumentarVolume();
-		xyz.aumentarVolume();
-		xyz.aumentarVolume();
-		xyz.aumentarVolume();
-		xyz.aumentarVolume();
-
+		xyz.setPotencia(60.0);		
+		xyz.ligar();
+			
 	}
 
 }
