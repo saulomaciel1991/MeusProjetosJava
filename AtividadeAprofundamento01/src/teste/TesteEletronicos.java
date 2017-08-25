@@ -11,7 +11,7 @@ public class TesteEletronicos {
 
 		// Declaração das variaveis
 		AparelhoDeSom xyz = new AparelhoDeSom();
-		CD cd = new CD();		
+		CD cd = new CD();
 		Player<Object> fita = new Player<Object>();
 		Musica m1 = new Musica("Todo Carnaval tem seu fim", "Los Hermanos", "Marcelo Camelo", 252);
 		Musica m2 = new Musica("A flor", "Los Hermanos", "Rodrigo Amarante", 210);
@@ -27,24 +27,21 @@ public class TesteEletronicos {
 		musicas.add(m4);
 		musicas.add(m5);
 
-		fita.setMusicas(musicas);		
+		fita.setMusicas(musicas);
 		cd.setNomeAlbum("Bloco do eu sozinho");
 		cd.setAnoLancamento(2001);
 		cd.setMusicas(musicas);
-		cd.setNomeArtista("Los Hermanos");		
+		cd.setNomeArtista("Los Hermanos");
 		xyz.setMarca("Sony");
 		xyz.setPotencia(60.0);
 		xyz.setPlayer(fita);
-		
-		
 
 		// Executando as funções
 
-		
 		try {
-			
-			xyz.ligar();			
-			xyz.alterarFuncao(Funcao.CD);		
+
+			xyz.ligar();
+			xyz.alterarFuncao(Funcao.CD);
 			xyz.getPlayer().avancarMusica();
 
 		} catch (EletronicoDesligadoException e) {
