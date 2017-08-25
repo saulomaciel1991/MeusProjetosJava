@@ -44,10 +44,7 @@ public class TesteEletronicos {
 		try {
 			
 			xyz.ligar();			
-			xyz.alterarFuncao(Funcao.CD);
-			xyz.getPlayer().
-			
-			xyz.getPlayer().play();
+			xyz.alterarFuncao(Funcao.CD);		
 			xyz.getPlayer().avancarMusica();
 
 		} catch (EletronicoDesligadoException e) {
