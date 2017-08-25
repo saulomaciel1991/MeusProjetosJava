@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import util.EletronicoDesligadoException;
 
-public abstract class Player<E> {
+public class Player<E> {
 
 	private Integer numeroMusicaAtual;
 	private Integer tempoMusicaAtual;
@@ -13,7 +13,6 @@ public abstract class Player<E> {
 	public void play() throws EletronicoDesligadoException {
 		this.setNumeroMusicaAtual(1);
 		System.out.println("Executando a música: " + musicas.get(this.getNumeroMusicaAtual() - 1).getNomeMusica());
-
 	}
 
 	public void stop() throws EletronicoDesligadoException {
