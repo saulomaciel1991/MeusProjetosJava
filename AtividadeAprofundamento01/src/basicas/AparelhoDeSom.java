@@ -4,7 +4,7 @@ import util.EletronicoDesligadoException;
 
 public class AparelhoDeSom extends Eletronico {
 	private Double potencia;
-	private Object player;
+	private CDPlayer player;
 	private Integer volume;
 
 	public AparelhoDeSom() {
@@ -41,7 +41,7 @@ public class AparelhoDeSom extends Eletronico {
 	}
 
 	public void alterarFuncao(Funcao funcao) throws EletronicoDesligadoException {
-		if (this.getLigado()) {
+		/*if (this.getLigado()) {
 			if (funcao == Funcao.CD) {
 				CDPlayer cdPlayer = new CDPlayer();
 				this.setPlayer(cdPlayer);
@@ -58,7 +58,7 @@ public class AparelhoDeSom extends Eletronico {
 			}
 		} else {
 			throw new EletronicoDesligadoException();
-		}
+		}*/
 	}
 
 	public Double getPotencia() {
@@ -69,11 +69,13 @@ public class AparelhoDeSom extends Eletronico {
 		this.potencia = potencia;
 	}
 
-	public Object getPlayer() {
+
+
+	public CDPlayer getPlayer() {
 		return player;
 	}
 
-	public void setPlayer(Object player) {
+	public void setPlayer(CDPlayer player) {
 		this.player = player;
 	}
 

@@ -52,7 +52,17 @@ public class CDPlayer extends Player {
 
 	@Override
 	public void recuarMusica() {
-		// TODO Auto-generated method stub
+		ArrayList<Musica> musicas = new ArrayList<>();
+		Integer num = 0;
+		
+		try {
+			musicas = this.CDCarregado.getMusicas();
+			this.setNumeroMusicaAtual(this.getNumeroMusicaAtual() - 1);
+			num = this.getNumeroMusicaAtual();
+			System.out.println("Executando a música: " + musicas.get(num - 1).getNomeMusica());
+		} catch (Exception e) {
+			System.out.println("Você já está na primeira musica do CD");
+		}
 
 	}
 
