@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import util.EletronicoDesligadoException;
 
-public class Player<E> {
+public class Player{
 
 	private Integer numeroMusicaAtual;
 	private Integer tempoMusicaAtual;

@@ -4,8 +4,8 @@ import util.EletronicoDesligadoException;
 
 public class AparelhoDeSom extends Eletronico {
 	private Double potencia;
-	private Player<?> player;
-	private Integer volume;	
+	private Object player;
+	private Integer volume;
 
 	public AparelhoDeSom() {
 		super();
@@ -56,7 +56,7 @@ public class AparelhoDeSom extends Eletronico {
 					System.out.println("Alterado para rádio!");
 				}
 			}
-		}else{
+		} else {
 			throw new EletronicoDesligadoException();
 		}
 	}
@@ -69,11 +69,11 @@ public class AparelhoDeSom extends Eletronico {
 		this.potencia = potencia;
 	}
 
-	public Player<?> getPlayer() {
+	public Object getPlayer() {
 		return player;
 	}
 
-	public void setPlayer(Player<?> player) {
+	public void setPlayer(Object player) {
 		this.player = player;
 	}
 

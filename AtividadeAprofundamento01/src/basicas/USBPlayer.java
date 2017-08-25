@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import util.EletronicoDesligadoException;
 
-public class USBPlayer extends Player<Object> {
+public class USBPlayer extends Player {
 
 	private ArrayList<Musica> musicas;
 
