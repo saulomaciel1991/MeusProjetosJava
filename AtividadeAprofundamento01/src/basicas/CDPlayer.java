@@ -1,6 +1,6 @@
 package basicas;
 
-import util.EletronicoDesligadoException;
+import java.util.ArrayList;
 
 public class CDPlayer extends Player {
 	private CD CDCarregado;
@@ -16,24 +16,44 @@ public class CDPlayer extends Player {
 	}
 
 	@Override
-	public void play() throws EletronicoDesligadoException {
+	public void play() {
+		ArrayList<Musica> musicas = new ArrayList<>();
+		Integer num = 0;
+
+		musicas = this.CDCarregado.getMusicas();
 		this.setNumeroMusicaAtual(1);
-		System.out.println("Executando a música: "
-				+ this.CDCarregado.getMusicas().get(this.getNumeroMusicaAtual() - 1).getNomeMusica());
+		num = this.getNumeroMusicaAtual();
+		System.out.println("Executando a música: " + musicas.get(num - 1).getNomeMusica());
+
+	}
+
+	@Override
+	public void stop() {
+		this.setNumeroMusicaAtual(0);
+		System.out.println("Player parado");
 	}
 
 	@Override
 	public void avancarMusica() {
-		Integer num = this.getNumeroMusicaAtual();
+		ArrayList<Musica> musicas = new ArrayList<>();
+		Integer num = 0;
 
-		if (num > 1) {
-			this.setNumeroMusicaAtual(this.getNumeroMusicaAtual() - 1);
+		try {
+			musicas = this.CDCarregado.getMusicas();
+			this.setNumeroMusicaAtual(this.getNumeroMusicaAtual() + 1);
 			num = this.getNumeroMusicaAtual();
-			System.out.println(num + " - " + this.CDCarregado.getMusicas().get(num - 1).getNomeMusica() + " - "
-					+ this.CDCarregado.getMusicas().get(num - 1).getNomeArtista());
-		} else {
-			System.out.println("Você está na primeira musica da playlist");
+			System.out.println("Executando a música: " + musicas.get(num - 1).getNomeMusica());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Você já está na ultima musica do CD");
 		}
+
+	}
+
+	@Override
+	public void recuarMusica() {
+		// TODO Auto-generated method stub
+
 	}
 
 	public CD getCDCarregado() {

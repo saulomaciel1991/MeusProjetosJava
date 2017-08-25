@@ -3,7 +3,6 @@ package teste;
 import java.util.ArrayList;
 
 import basicas.*;
-import util.EletronicoDesligadoException;
 
 public class TesteEletronicos {
 
@@ -19,6 +18,7 @@ public class TesteEletronicos {
 		Musica m3 = new Musica("Retrato Pra Iaiá", "Los Hermanos", "Marcelo Camelo", 282);
 		Musica m4 = new Musica("Assim será", "Los Hermanos", "Marcelo Camelo", 194);
 		Musica m5 = new Musica("Casa pré-fabricada", "Los Hermanos", "Marcelo Camelo", 245);
+		
 		ArrayList<Musica> musicas = new ArrayList<>();
 
 		// setando os valores
@@ -26,29 +26,22 @@ public class TesteEletronicos {
 		musicas.add(m2);
 		musicas.add(m3);
 		musicas.add(m4);
-		musicas.add(m5);
+		musicas.add(m5);		
 		cd.setNomeAlbum("Bloco do eu sozinho");
 		cd.setAnoLancamento(2001);
 		cd.setMusicas(musicas);
 		cd.setNomeArtista("Los Hermanos");
 		xyz.setMarca("Sony");
 		xyz.setPotencia(60.0);
-		
-		cdplayer.colocarCD(cd);
-		try {
-			cdplayer.play();
-		} catch (EletronicoDesligadoException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		cdplayer.avancarMusica();
-		cdplayer.avancarMusica();
-		cdplayer.avancarMusica();
-		cdplayer.avancarMusica();
-		cdplayer.avancarMusica();
-		cdplayer.avancarMusica();
 
-		// Executando as funções
+		cdplayer.colocarCD(cd);
+		cdplayer.play();
+		cdplayer.avancarMusica();
+		cdplayer.avancarMusica();
+		cdplayer.avancarMusica();
+		cdplayer.avancarMusica();
+		cdplayer.avancarMusica();
+		cdplayer.avancarMusica();
 
 	}
 
