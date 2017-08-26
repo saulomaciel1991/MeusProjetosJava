@@ -3,6 +3,7 @@ package teste;
 import java.util.ArrayList;
 
 import basicas.*;
+import util.EletronicoDesligadoException;
 
 public class TesteEletronicos {
 
@@ -34,14 +35,22 @@ public class TesteEletronicos {
 		xyz.setMarca("Sony");
 		xyz.setPotencia(60.0);
 
-		cdplayer.colocarCD(cd);
+		/*cdplayer.colocarCD(cd);
 		cdplayer.play();
 		cdplayer.avancarMusica();
 		cdplayer.avancarMusica();
 		cdplayer.avancarMusica();
 		cdplayer.avancarMusica();
 		cdplayer.avancarMusica();
-		cdplayer.avancarMusica();
+		cdplayer.avancarMusica();*/
+		xyz.ligar();
+		try {
+			xyz.alterarFuncao(Funcao.CD);
+			
+		} catch (EletronicoDesligadoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
