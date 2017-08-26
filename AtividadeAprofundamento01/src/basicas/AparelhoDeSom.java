@@ -4,8 +4,8 @@ import util.EletronicoDesligadoException;
 
 public class AparelhoDeSom extends Eletronico {
 	private Double potencia;
-	private Player<?> player;
-	private Integer volume;	
+	private Player player;
+	private Integer volume;
 
 	public AparelhoDeSom() {
 		super();
@@ -43,20 +43,18 @@ public class AparelhoDeSom extends Eletronico {
 	public void alterarFuncao(Funcao funcao) throws EletronicoDesligadoException {
 		if (this.getLigado()) {
 			if (funcao == Funcao.CD) {
-				CDPlayer cdPlayer = new CDPlayer();
-				this.setPlayer(cdPlayer);
+				this.player = new CDPlayer();				
 				System.out.println("Alterado para CD player!");
 			} else {
 				if (funcao == Funcao.USB) {
-					USBPlayer usbPlayer = new USBPlayer();
-					this.setPlayer(usbPlayer);
+					this.player = new USBPlayer();
 					System.out.println("Alterado para USB!");
 				} else {
 					this.setPlayer(null);
 					System.out.println("Alterado para rádio!");
 				}
 			}
-		}else{
+		} else {
 			throw new EletronicoDesligadoException();
 		}
 	}
@@ -69,11 +67,11 @@ public class AparelhoDeSom extends Eletronico {
 		this.potencia = potencia;
 	}
 
-	public Player<?> getPlayer() {
+	public Player getPlayer() {
 		return player;
 	}
 
-	public void setPlayer(Player<?> player) {
+	public void setPlayer(Player player) {
 		this.player = player;
 	}
 
@@ -83,6 +81,6 @@ public class AparelhoDeSom extends Eletronico {
 
 	public void setVolume(Integer volume) {
 		this.volume = volume;
-	}
-
+	}		
+	
 }

@@ -2,36 +2,68 @@ package basicas;
 
 import java.util.ArrayList;
 
-import util.EletronicoDesligadoException;
-
-public class CDPlayer extends Player<Object> {
+public class CDPlayer extends Player {
 	private CD CDCarregado;
 
-	public void colocarCD(CD CDCarregado) throws EletronicoDesligadoException {
+	public void colocarCD(CD CDCarregado) {
 		this.setCDCarregado(CDCarregado);
 		System.out.println("Foi colocado o CD de " + CDCarregado.getNomeArtista());
 	}
 
-	public void tirarCD() throws EletronicoDesligadoException {
+	public void tirarCD() {
 		System.out.println("Foi tirado o CD de " + this.CDCarregado.getNomeArtista());
 		this.setCDCarregado(null);
 	}
 
-	
-	
 	@Override
-	public void avancarMusica() throws EletronicoDesligadoException {
-		ArrayList<Musica> musicas = CDCarregado.getMusicas();
-		Integer tamanho = CDCarregado.getMusicas().size();
+	public void play() {
+		ArrayList<Musica> musicas = new ArrayList<>();
 		Integer num = 0;
 
-		if (tamanho > num) {
-			num++;
-			System.out.println(
-					num + " - " + musicas.get(num - 1).getNomeMusica() + " - " + musicas.get(num - 1).getNomeArtista());
-		} else {
-			System.out.println("Você está na útima música da playlist");
+		musicas = this.CDCarregado.getMusicas();
+		this.setNumeroMusicaAtual(1);
+		num = this.getNumeroMusicaAtual();
+		System.out.println("Executando a música: " + musicas.get(num - 1).getNomeMusica());
+
+	}
+
+	@Override
+	public void stop() {
+		this.setNumeroMusicaAtual(0);
+		System.out.println("Player parado");
+	}
+
+	@Override
+	public void avancarMusica() {
+		ArrayList<Musica> musicas = new ArrayList<>();
+		Integer num = 0;
+
+		try {
+			musicas = this.CDCarregado.getMusicas();
+			this.setNumeroMusicaAtual(this.getNumeroMusicaAtual() + 1);
+			num = this.getNumeroMusicaAtual();
+			System.out.println("Executando a música: " + musicas.get(num - 1).getNomeMusica());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Você já está na ultima musica do CD");
 		}
+
+	}
+
+	@Override
+	public void recuarMusica() {
+		ArrayList<Musica> musicas = new ArrayList<>();
+		Integer num = 0;
+
+		try {
+			musicas = this.CDCarregado.getMusicas();
+			this.setNumeroMusicaAtual(this.getNumeroMusicaAtual() - 1);
+			num = this.getNumeroMusicaAtual();
+			System.out.println("Executando a música: " + musicas.get(num - 1).getNomeMusica());
+		} catch (Exception e) {
+			System.out.println("Você já está na primeira musica do CD");
+		}
+
 	}
 
 	public CD getCDCarregado() {
