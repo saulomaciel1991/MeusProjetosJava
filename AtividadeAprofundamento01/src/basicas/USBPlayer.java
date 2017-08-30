@@ -53,7 +53,8 @@ public class USBPlayer extends Player {
 			System.out.println(num + " - " + nomeMusica + " - " + nomeArtista);
 			this.setNumeroMusicaAtual(this.getNumeroMusicaAtual() - 1);
 		} else {
-			this.setNumeroMusicaAtual(musicas.size());			
+			this.setNumeroMusicaAtual(musicas.size());
+			this.play();
 			this.recuarMusica();
 		}
 
