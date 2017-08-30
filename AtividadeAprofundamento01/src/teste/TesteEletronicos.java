@@ -11,7 +11,7 @@ public class TesteEletronicos {
 		// Declaração das variaveis
 		AparelhoDeSom xyz = new AparelhoDeSom();
 		CD cd = new CD();
-		CDPlayer cdplayer = new CDPlayer();
+		//CDPlayer cdplayer = new CDPlayer();
 		USBPlayer usbplayer = new USBPlayer();
 		Musica m1 = new Musica("Todo Carnaval tem seu fim", "Los Hermanos", "Marcelo Camelo", 252);
 		Musica m2 = new Musica("A flor", "Los Hermanos", "Rodrigo Amarante", 210);
@@ -34,20 +34,15 @@ public class TesteEletronicos {
 		xyz.setMarca("Sony");
 		xyz.setPotencia(60.0);
 
-		/*cdplayer.colocarCD(cd);
-		cdplayer.play();
-		cdplayer.avancarMusica();
-		cdplayer.avancarMusica();
-		cdplayer.avancarMusica();
-		cdplayer.avancarMusica();
-		cdplayer.avancarMusica();
-		cdplayer.avancarMusica();
-		cdplayer.recuarMusica();
-		cdplayer.recuarMusica();
-		cdplayer.recuarMusica();
-		cdplayer.recuarMusica();
-		cdplayer.recuarMusica();*/
-		
+		/*
+		 * cdplayer.colocarCD(cd); cdplayer.play(); cdplayer.avancarMusica();
+		 * cdplayer.avancarMusica(); cdplayer.avancarMusica();
+		 * cdplayer.avancarMusica(); cdplayer.avancarMusica();
+		 * cdplayer.avancarMusica(); cdplayer.recuarMusica();
+		 * cdplayer.recuarMusica(); cdplayer.recuarMusica();
+		 * cdplayer.recuarMusica(); cdplayer.recuarMusica();
+		 */
+
 		usbplayer.setMusicas(musicas);
 		usbplayer.play();
 		usbplayer.avancarMusica();
@@ -59,7 +54,6 @@ public class TesteEletronicos {
 		usbplayer.recuarMusica();
 		usbplayer.recuarMusica();
 		usbplayer.recuarMusica();
-		
 
 	}
 
