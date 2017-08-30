@@ -37,12 +37,19 @@ public class CDPlayer extends Player {
 	public void avancarMusica() {
 		ArrayList<Musica> musicas = new ArrayList<>();
 		Integer num = 0;
+		String nomeMusica = null, nomeArtista = null;
 
 		try {
 			musicas = this.CDCarregado.getMusicas();
-			this.setNumeroMusicaAtual(this.getNumeroMusicaAtual() + 1);
+			if (this.getNumeroMusicaAtual() < (musicas.size())) {
+				this.setNumeroMusicaAtual(this.getNumeroMusicaAtual() + 1);
+			}
+			
 			num = this.getNumeroMusicaAtual();
-			System.out.println("Executando a música: " + musicas.get(num - 1).getNomeMusica());
+			nomeMusica = musicas.get(num - 1).getNomeMusica();
+			nomeArtista = musicas.get(num - 1).getNomeArtista();
+
+			System.out.println(num + " - " + nomeMusica + " - " + nomeArtista);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Você já está na ultima musica do CD");
@@ -54,13 +61,20 @@ public class CDPlayer extends Player {
 	public void recuarMusica() {
 		ArrayList<Musica> musicas = new ArrayList<>();
 		Integer num = 0;
-		
+		String nomeMusica = null, nomeArtista = null;
+
 		try {
 			musicas = this.CDCarregado.getMusicas();
-			this.setNumeroMusicaAtual(this.getNumeroMusicaAtual() - 1);
+			if (this.getNumeroMusicaAtual() > 0) {
+				this.setNumeroMusicaAtual(this.getNumeroMusicaAtual() - 1);
+			}
 			num = this.getNumeroMusicaAtual();
-			System.out.println("Executando a música: " + musicas.get(num - 1).getNomeMusica());
+			nomeMusica = musicas.get(num - 1).getNomeMusica();
+			nomeArtista = musicas.get(num - 1).getNomeArtista();
+
+			System.out.println(num + " - " + nomeMusica + " - " + nomeArtista);
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			System.out.println("Você já está na primeira musica do CD");
 		}
 

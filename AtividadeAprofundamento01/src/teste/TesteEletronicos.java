@@ -3,7 +3,6 @@ package teste;
 import java.util.ArrayList;
 
 import basicas.*;
-import util.EletronicoDesligadoException;
 
 public class TesteEletronicos {
 
@@ -13,7 +12,7 @@ public class TesteEletronicos {
 		AparelhoDeSom xyz = new AparelhoDeSom();
 		CD cd = new CD();
 		//CDPlayer cdplayer = new CDPlayer();
-
+		USBPlayer usbplayer = new USBPlayer();
 		Musica m1 = new Musica("Todo Carnaval tem seu fim", "Los Hermanos", "Marcelo Camelo", 252);
 		Musica m2 = new Musica("A flor", "Los Hermanos", "Rodrigo Amarante", 210);
 		Musica m3 = new Musica("Retrato Pra Iaiá", "Los Hermanos", "Marcelo Camelo", 282);
@@ -37,20 +36,25 @@ public class TesteEletronicos {
 
 		/*
 		 * cdplayer.colocarCD(cd); cdplayer.play(); cdplayer.avancarMusica();
+		 * cdplayer.avancarMusica(); cdplayer.avancarMusica();
+		 * cdplayer.avancarMusica(); cdplayer.avancarMusica();
 		 * cdplayer.avancarMusica(); cdplayer.recuarMusica();
 		 * cdplayer.recuarMusica(); cdplayer.recuarMusica();
+		 * cdplayer.recuarMusica(); cdplayer.recuarMusica();
 		 */
-		xyz.ligar();
-		xyz.getPlayer().colocarCD(cd);
-		
-		try {
-			xyz.alterarFuncao(Funcao.CD);
 
-			xyz.getPlayer().avancarMusica();
-		} catch (EletronicoDesligadoException e) {
-			// TODO Auto-generated catch block
-			System.out.println(e.getMessage());
-		}
+		usbplayer.setMusicas(musicas);
+		usbplayer.play();
+		usbplayer.avancarMusica();
+		usbplayer.avancarMusica();
+		usbplayer.avancarMusica();
+		usbplayer.avancarMusica();
+		usbplayer.recuarMusica();
+		usbplayer.recuarMusica();
+		usbplayer.recuarMusica();
+		usbplayer.recuarMusica();
+		usbplayer.recuarMusica();
+
 	}
 
 }

@@ -8,25 +8,54 @@ public class USBPlayer extends Player {
 
 	@Override
 	public void play() {
-		// TODO Auto-generated method stub
+		Integer num = 0;
+
+		this.setNumeroMusicaAtual(1);
+		num = this.getNumeroMusicaAtual();
+		System.out.println("Músicas carregadas!");
+		System.out.println("Executando a música: " + musicas.get(num - 1).getNomeMusica());
 
 	}
 
 	@Override
 	public void stop() {
-		// TODO Auto-generated method stub
-
+		this.setNumeroMusicaAtual(0);
+		System.out.println("Player parado");
 	}
 
 	@Override
 	public void avancarMusica() {
-		// TODO Auto-generated method stub
+		Integer num = 0;
+		String nomeMusica = null, nomeArtista = null;
+
+		if (this.getNumeroMusicaAtual() < (musicas.size())) {
+			this.setNumeroMusicaAtual(this.getNumeroMusicaAtual() + 1);
+			num = this.getNumeroMusicaAtual();
+			nomeMusica = musicas.get(num - 1).getNomeMusica();
+			nomeArtista = musicas.get(num - 1).getNomeArtista();
+			System.out.println(num + " - " + nomeMusica + " - " + nomeArtista);
+		} else {
+			this.setNumeroMusicaAtual(0);
+			this.avancarMusica();
+		}
 
 	}
 
 	@Override
 	public void recuarMusica() {
-		// TODO Auto-generated method stub
+		Integer num = 0;
+		String nomeMusica = null, nomeArtista = null;
+
+		if (this.getNumeroMusicaAtual() > 0) {
+			num = this.getNumeroMusicaAtual();
+			nomeMusica = musicas.get(num - 1).getNomeMusica();
+			nomeArtista = musicas.get(num - 1).getNomeArtista();
+			System.out.println(num + " - " + nomeMusica + " - " + nomeArtista);
+			this.setNumeroMusicaAtual(this.getNumeroMusicaAtual() - 1);
+		} else {
+			this.setNumeroMusicaAtual(musicas.size());			
+			this.recuarMusica();
+		}
 
 	}
 
