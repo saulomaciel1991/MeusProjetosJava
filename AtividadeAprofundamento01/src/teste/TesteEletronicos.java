@@ -11,7 +11,7 @@ public class TesteEletronicos {
 		// Declaração das variaveis
 		AparelhoDeSom xyz = new AparelhoDeSom();
 		CD cd = new CD();
-		CDPlayer cdplayer = new CDPlayer();
+		//CDPlayer cdplayer = new CDPlayer();
 		USBPlayer usbplayer = new USBPlayer();
 		Musica m1 = new Musica("Todo Carnaval tem seu fim", "Los Hermanos", "Marcelo Camelo", 252);
 		Musica m2 = new Musica("A flor", "Los Hermanos", "Rodrigo Amarante", 210);
