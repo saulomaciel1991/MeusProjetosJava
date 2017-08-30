@@ -34,20 +34,15 @@ public class TesteEletronicos {
 		xyz.setMarca("Sony");
 		xyz.setPotencia(60.0);
 
-		/*cdplayer.colocarCD(cd);
-		cdplayer.play();
-		cdplayer.avancarMusica();
-		cdplayer.avancarMusica();
-		cdplayer.avancarMusica();
-		cdplayer.avancarMusica();
-		cdplayer.avancarMusica();
-		cdplayer.avancarMusica();
-		cdplayer.recuarMusica();
-		cdplayer.recuarMusica();
-		cdplayer.recuarMusica();
-		cdplayer.recuarMusica();
-		cdplayer.recuarMusica();*/
-		
+		/*
+		 * cdplayer.colocarCD(cd); cdplayer.play(); cdplayer.avancarMusica();
+		 * cdplayer.avancarMusica(); cdplayer.avancarMusica();
+		 * cdplayer.avancarMusica(); cdplayer.avancarMusica();
+		 * cdplayer.avancarMusica(); cdplayer.recuarMusica();
+		 * cdplayer.recuarMusica(); cdplayer.recuarMusica();
+		 * cdplayer.recuarMusica(); cdplayer.recuarMusica();
+		 */
+
 		usbplayer.setMusicas(musicas);
 		usbplayer.play();
 		usbplayer.avancarMusica();
@@ -59,7 +54,6 @@ public class TesteEletronicos {
 		usbplayer.recuarMusica();
 		usbplayer.recuarMusica();
 		usbplayer.recuarMusica();
-		
 
 	}
 
