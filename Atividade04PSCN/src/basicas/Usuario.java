@@ -7,8 +7,6 @@ public class Usuario {
 	private String nome;
 	private String email;
 
-	
-	
 	public Usuario(Integer codigo, String nome) {
 		super();
 		this.codigo = codigo;
@@ -28,18 +26,18 @@ public class Usuario {
 		super();
 	}
 
-	@Override
+	/*@Override
 	public boolean equals(Object arg0) {
 		Usuario u = (Usuario) arg0;
 		if (this.getCodigo() == u.getCodigo()) {
 			return true;
 		}
 		return false;
-	}
+	}*/
 
 	@Override
 	public String toString() {
-		return this.getCodigo() + " - " + this.getNome();
+		return "ID: " + this.getCodigo() + ", " + "Nome: " + this.getNome();
 	}
 
 	public Integer getCodigo() {

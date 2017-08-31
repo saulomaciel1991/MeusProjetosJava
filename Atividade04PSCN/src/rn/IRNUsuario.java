@@ -1,13 +1,14 @@
-package dao;
+package rn;
 
 import java.util.ArrayList;
 
 import basicas.Usuario;
 
-public interface IDAOUsuario {
+public interface IRNUsuario {
 	public void inserir(Usuario usuario);
 
-	public Usuario pesquisar(Usuario usuario);
+	public Usuario pesquisar(Integer codigo);
 
 	public ArrayList<Usuario> listar();
+
 }

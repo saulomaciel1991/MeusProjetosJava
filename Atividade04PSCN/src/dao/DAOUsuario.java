@@ -10,25 +10,13 @@ public class DAOUsuario implements IDAOUsuario {
 	public DAOUsuario() {
 		super();
 		usuarios = new ArrayList<>();
+		this.popular();
 	}
 
 	@Override
 	public void inserir(Usuario usuario) {
 		usuarios.add(usuario);
-	}
-
-	@Override
-	public void excluir(Usuario usuario) {
-		Integer index = usuarios.indexOf(usuario);
-		usuarios.remove(index);
-	}
-
-	@Override
-	public void altera(Usuario usuario) {
-		Usuario u = new Usuario(usuario.getCodigo(), usuario.getLogin(), usuario.getSenha(), usuario.getNome(),
-				usuario.getEmail());
-		usuarios.remove(usuario);
-		usuarios.add(u);
+		System.out.println(usuario.getNome() + " adicionado com sucesso!");
 	}
 
 	@Override
@@ -37,9 +25,18 @@ public class DAOUsuario implements IDAOUsuario {
 	}
 
 	@Override
-	public Usuario pesquisa(Usuario usuario) {
-		// TODO Auto-generated method stub
-		return null;
+	public Usuario pesquisar(Usuario usuario) {
+		return usuarios.get(usuario.getCodigo() - 1);
+	}
+
+	public void popular() {
+		Usuario a = new Usuario(00001, "Saulo", "123456", "Saulo Maciel", "saulomcm@gmail.com");
+		Usuario b = new Usuario(00002, "Renato", "123456", "Renato Andrade", "rnandrade@gmail.com");
+		Usuario c = new Usuario(00003, "Darlene", "123456", "Darlene Rose", "darlenerose@gmail.com");
+
+		usuarios.add(a);
+		usuarios.add(b);
+		usuarios.add(c);
 	}
 
 }
