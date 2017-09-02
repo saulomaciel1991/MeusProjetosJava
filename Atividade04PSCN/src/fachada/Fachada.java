@@ -20,13 +20,18 @@ public class Fachada implements IFachada {
 	}
 
 	@Override
-	public Usuario pesquisar(Integer codigo) {
-		return rn.pesquisar(codigo);
+	public Usuario pesquisar(String login) {
+		return rn.pesquisar(login);
 	}
 
 	@Override
 	public ArrayList<Usuario> listar() {
 		return rn.listar();
+	}
+
+	@Override
+	public void fazerLogin(String login, String senha) {
+		rn.fazerLogin(login, senha);
 	}
 
 }

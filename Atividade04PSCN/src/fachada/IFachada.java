@@ -7,7 +7,9 @@ import basicas.Usuario;
 public interface IFachada {
 	public void inserir(Usuario usuario);
 
-	public Usuario pesquisar(Integer codigo);
+	public Usuario pesquisar(String login);
 
 	public ArrayList<Usuario> listar();
+	
+	public void fazerLogin(String login, String senha);
 }

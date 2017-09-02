@@ -26,14 +26,14 @@ public class Usuario {
 		super();
 	}
 
-	/*@Override
+	@Override
 	public boolean equals(Object arg0) {
 		Usuario u = (Usuario) arg0;
 		if (this.getCodigo() == u.getCodigo()) {
 			return true;
 		}
 		return false;
-	}*/
+	}
 
 	@Override
 	public String toString() {
