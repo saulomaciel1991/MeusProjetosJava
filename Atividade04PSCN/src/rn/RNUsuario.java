@@ -11,6 +11,7 @@ public class RNUsuario implements IRNUsuario {
 	public void inserir(Usuario usuario) {
 		DAOUsuario dao = new DAOUsuario();
 		dao.inserir(usuario);
+		System.out.println(usuario.getNome() + " adicionado(a) com sucesso!");
 	}
 
 	@Override
@@ -51,14 +52,37 @@ public class RNUsuario implements IRNUsuario {
 	}
 
 	@Override
-	public void cadastrarUsuario(Usuario usuario) {
-
+	public void cadastrarUsuario(Usuario usuario, String confirmacaoSenha) {
+		DAOUsuario dao = new DAOUsuario();
+		
+		if (usuario.getLogin().length() > 4 && usuario.getLogin().length() < 11) {
+			if (usuario.getSenha().length() > 5 && usuario.getSenha().length() < 13) {
+				if (usuario.getSenha() == confirmacaoSenha) {
+					if (usuario.getNome().length() <= 50) {
+						if (usuario.getEmail().length() <= 30) {
+							dao.inserir(usuario);
+							System.out.println(usuario.getNome() + " adicionado(a) com sucesso!");
+						}else{
+							System.out.println("Campos obrigatórios não informados!");
+						}
+					}else{
+						System.out.println("Campos obrigatórios não informados!");
+					}
+				}else{
+					System.out.println("Senha não confere!");
+				}
+			}else{
+				System.out.println("Campos obrigatórios não informados!");
+			}
+		}else{
+			System.out.println("Campos obrigatórios não informados!");
+		}
 	}
 
 	@Override
-	public Boolean validarTamanho(Integer tamanho) {
-		// TODO Auto-generated method stub
-		return null;
+	public void popularColecao() {
+		DAOUsuario dao = new DAOUsuario();
+		dao.popular();
 	}
 
 }

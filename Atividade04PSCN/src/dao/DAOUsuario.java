@@ -10,13 +10,12 @@ public class DAOUsuario implements IDAOUsuario {
 	public DAOUsuario() {
 		super();
 		usuarios = new ArrayList<>();
-		this.popular();
+		//this.popular();
 	}
 
 	@Override
 	public void inserir(Usuario usuario) {
 		usuarios.add(usuario);
-		System.out.println(usuario.getNome() + " adicionado com sucesso!");
 	}
 
 	@Override

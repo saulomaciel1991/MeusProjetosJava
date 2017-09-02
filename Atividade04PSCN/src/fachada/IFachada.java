@@ -12,4 +12,8 @@ public interface IFachada {
 	public ArrayList<Usuario> listar();
 	
 	public void fazerLogin(String login, String senha);
+	
+	public void cadastrarUsuario(Usuario usuario, String confirmacaoSenha);
+	
+	public void popularColecao();
 }

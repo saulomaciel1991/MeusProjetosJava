@@ -34,4 +34,14 @@ public class Fachada implements IFachada {
 		rn.fazerLogin(login, senha);
 	}
 
+	@Override
+	public void cadastrarUsuario(Usuario usuario, String confirmacaoSenha) {
+		rn.cadastrarUsuario(usuario, confirmacaoSenha);
+	}
+
+	@Override
+	public void popularColecao() {
+		rn.popularColecao();
+	}
+
 }

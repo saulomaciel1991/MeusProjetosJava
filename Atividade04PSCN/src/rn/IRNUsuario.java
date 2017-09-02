@@ -13,7 +13,8 @@ public interface IRNUsuario {
 	
 	public void fazerLogin(String login, String senha);
 	
-	public void cadastrarUsuario(Usuario usuario);
+	public void cadastrarUsuario(Usuario usuario, String confirmacaoSenha);
 	
-	public Boolean validarTamanho(Integer tamanho);
+	public void popularColecao();
+	
 }

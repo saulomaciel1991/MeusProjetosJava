@@ -29,7 +29,7 @@ public class Usuario {
 	@Override
 	public boolean equals(Object arg0) {
 		Usuario u = (Usuario) arg0;
-		if (this.getCodigo() == u.getCodigo()) {
+		if (this.getLogin() == u.getLogin()) {
 			return true;
 		}
 		return false;
