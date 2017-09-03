@@ -15,6 +15,8 @@ public interface IRNUsuario {
 	
 	public void cadastrarUsuario(Usuario usuario, String confirmacaoSenha);
 	
-	public void popularColecao();
+	public Boolean verificarDuplicidade(Usuario usuario);
+	
+	public void instanciarDao();
 	
 }

@@ -10,4 +10,6 @@ public interface IDAOUsuario {
 	public Usuario pesquisar(String login);
 
 	public ArrayList<Usuario> listar();
+	
+	public void popular();
 }

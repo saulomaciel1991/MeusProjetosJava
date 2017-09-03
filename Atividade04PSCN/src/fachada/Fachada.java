@@ -39,9 +39,5 @@ public class Fachada implements IFachada {
 		rn.cadastrarUsuario(usuario, confirmacaoSenha);
 	}
 
-	@Override
-	public void popularColecao() {
-		rn.popularColecao();
-	}
 
 }

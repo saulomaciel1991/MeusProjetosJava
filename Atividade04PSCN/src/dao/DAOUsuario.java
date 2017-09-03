@@ -10,7 +10,7 @@ public class DAOUsuario implements IDAOUsuario {
 	public DAOUsuario() {
 		super();
 		usuarios = new ArrayList<>();
-		//this.popular();
+		this.popular();
 	}
 
 	@Override

@@ -15,5 +15,4 @@ public interface IFachada {
 	
 	public void cadastrarUsuario(Usuario usuario, String confirmacaoSenha);
 	
-	public void popularColecao();
 }
