@@ -7,14 +7,13 @@ public class USBPlayer extends Player {
 	private ArrayList<Musica> musicas;
 
 	@Override
-	public void play() {
+	public void play() {		
 		Integer num = 0;
 
 		this.setNumeroMusicaAtual(1);
 		num = this.getNumeroMusicaAtual();
 		System.out.println("Músicas carregadas!");
 		System.out.println("Executando a música: " + musicas.get(num - 1).getNomeMusica());
-
 	}
 
 	@Override

@@ -47,8 +47,8 @@ public class AparelhoDeSom extends Eletronico {
 				System.out.println("Alterado para CD player!");
 			} else {
 				if (funcao == Funcao.USB) {
-					this.player = new USBPlayer();
-					System.out.println("Alterado para USB!");
+					this.player = new USBPlayer();					
+					System.out.println("Alterado para USB!");		
 				} else {
 					this.setPlayer(null);
 					System.out.println("Alterado para rádio!");
