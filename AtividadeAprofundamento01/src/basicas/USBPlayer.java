@@ -46,19 +46,16 @@ public class USBPlayer extends Player {
 		Integer num = 0;
 		String nomeMusica = null, nomeArtista = null;
 
-		try {
-			if (this.getNumeroMusicaAtual() > 0) {
-				this.setNumeroMusicaAtual(this.getNumeroMusicaAtual() - 1);
-				num = this.getNumeroMusicaAtual();
-				nomeMusica = musicas.get(num - 1).getNomeMusica();
-				nomeArtista = musicas.get(num - 1).getNomeArtista();
-				System.out.println(num + " - " + nomeMusica + " - " + nomeArtista);
-			} else {
-				this.setNumeroMusicaAtual(musicas.size());
-				this.avancarMusica();
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
+		if (this.getNumeroMusicaAtual() > 0) {
+			num = this.getNumeroMusicaAtual();
+			nomeMusica = musicas.get(num - 1).getNomeMusica();
+			nomeArtista = musicas.get(num - 1).getNomeArtista();
+			System.out.println(num + " - " + nomeMusica + " - " + nomeArtista);
+			this.setNumeroMusicaAtual(this.getNumeroMusicaAtual() - 1);
+		} else {
+			this.setNumeroMusicaAtual(musicas.size());
+			this.play();
+			this.recuarMusica();
 		}
 
 	}
