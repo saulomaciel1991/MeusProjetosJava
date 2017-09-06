@@ -1,16 +1,25 @@
 package dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import basicas.Usuario;
 
 public class DAOUsuario implements IDAOUsuario {
-	ArrayList<Usuario> usuarios;
+	List<Usuario> usuarios;
+	private static DAOUsuario dao;
 
-	public DAOUsuario() {
+	private DAOUsuario() {
 		super();
 		usuarios = new ArrayList<>();
 		this.popular();
+	}
+
+	public static DAOUsuario getInstance() {
+		if (dao == null) {
+			dao = new DAOUsuario();
+		}
+		return dao;
 	}
 
 	@Override
@@ -20,7 +29,7 @@ public class DAOUsuario implements IDAOUsuario {
 
 	@Override
 	public ArrayList<Usuario> listar() {
-		return this.usuarios;
+		return (ArrayList<Usuario>) this.usuarios;
 	}
 
 	@Override
