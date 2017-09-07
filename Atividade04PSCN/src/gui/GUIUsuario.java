@@ -7,7 +7,7 @@ public class GUIUsuario {
 
 	public static void main(String[] args) {
 
-		Fachada fc = new Fachada();
+		Fachada fc = Fachada.getInstance();
 
 		Usuario u = new Usuario();
 		u.setCodigo(00005);
