@@ -10,9 +10,7 @@ public class RNUsuario implements IRNUsuario {
 	IDAOUsuario dao;
 
 	public void instanciarDao() {
-		if (dao == null) {
-			dao = new DAOUsuario();
-		}
+		dao = DAOUsuario.getInstance();
 	}
 	
 	public RNUsuario(){
