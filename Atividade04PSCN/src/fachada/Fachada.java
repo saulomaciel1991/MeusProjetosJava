@@ -8,10 +8,18 @@ import rn.RNUsuario;
 
 public class Fachada implements IFachada {
 	private IRNUsuario rn;
+	private static IFachada fc;
 
-	public Fachada() {
+	private Fachada() {
 		super();
 		rn = new RNUsuario();
+	}
+
+	public static Fachada getInstance() {
+		if (fc == null) {
+			fc = new Fachada();
+		}
+		return (Fachada) fc;
 	}
 
 	@Override
@@ -38,6 +46,5 @@ public class Fachada implements IFachada {
 	public void cadastrarUsuario(Usuario usuario, String confirmacaoSenha) {
 		rn.cadastrarUsuario(usuario, confirmacaoSenha);
 	}
-
 
 }
