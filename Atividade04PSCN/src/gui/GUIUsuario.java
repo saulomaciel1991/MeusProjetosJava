@@ -37,6 +37,7 @@ public class GUIUsuario {
 		for (Usuario usuario : fc.listar()) {
 			System.out.println(usuario);
 		}
+		
 
 	}
 

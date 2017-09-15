@@ -3,6 +3,7 @@ package teste;
 import java.util.ArrayList;
 
 import basicas.*;
+import util.CDPlayerPlayCommand;
 import util.EletronicoDesligadoException;
 
 public class TesteEletronicos {
@@ -123,5 +124,18 @@ public class TesteEletronicos {
 		cr.ligar(tv);
 
 	}
+	
+	//Teste do Padrao de Projeto Command
+	
+	/*CDPlayerPlayCommand playCd;
+	
+	try {
+		xyz.alterarFuncao(Funcao.CD);
+		playCd = new CDPlayerPlayCommand((CDPlayer) xyz.getPlayer());
+		playCd.execute();
+	} catch (EletronicoDesligadoException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}*/
 
 }
