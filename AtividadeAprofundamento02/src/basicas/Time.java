@@ -85,5 +85,18 @@ public class Time {
 		this.tecnico = tecnico;
 		this.jogadores = jogadores;
 	}
+	
+	public Time(Integer id, String nome, String estado, Integer pontos, Tecnico tecnico) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.estado = estado;
+		this.pontos = pontos;
+		this.tecnico = tecnico;
+	}
+	
+	public Time(){
+		super();
+	}
 		
 }

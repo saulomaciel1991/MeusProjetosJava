@@ -1,7 +1,5 @@
 package basicas;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 
 @Entity
@@ -10,7 +8,7 @@ public class Tecnico extends Pessoa{
 	public Double salario;
 	
 	
-	public Tecnico(Integer id, String nome, Date dataNascimento, Double salario) {
+	public Tecnico(Integer id, String nome, String dataNascimento, Double salario) {
 		super(id, nome, dataNascimento);
 		this.salario = salario;
 	}
