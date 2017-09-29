@@ -1,5 +1,7 @@
 package basicas;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -15,6 +17,18 @@ public class Jogador extends Pessoa {
 	@ManyToOne
 	@JoinColumn(name = "idTime")
 	private Time time;
+
+	public Jogador(Integer id, String nome, Date dataNascimento, Integer numeroCamisa,
+			Integer quantidadeCartoesAmarelos, Integer quantidadeCartoesVermelhos) {
+		super(id, nome, dataNascimento);
+		this.numeroCamisa = numeroCamisa;
+		this.quantidadeCartoesAmarelos = quantidadeCartoesAmarelos;
+		this.quantidadeCartoesVermelhos = quantidadeCartoesVermelhos;
+	}
+
+	public Jogador() {
+		super();
+	}
 
 	public Integer getNumeroCamisa() {
 		return numeroCamisa;
@@ -54,6 +68,19 @@ public class Jogador extends Pessoa {
 
 	public void setTime(Time time) {
 		this.time = time;
+	}
+
+	@Override
+	public boolean equals(Object arg0) {
+		Jogador j = new Jogador();
+		Boolean retorno = false;
+		j = (Jogador) arg0;
+		if (this.getNome().equals(j.getNome())) {
+			if (this.getNumeroCamisa() == j.getNumeroCamisa()) {
+				retorno = true;
+			}
+		}
+		return retorno;
 	}
 
 }

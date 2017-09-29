@@ -19,6 +19,17 @@ public abstract class Pessoa {
 	private String nome;
 	private Date dataNascimento;
 
+	public Pessoa(Integer id, String nome, Date dataNascimento) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.dataNascimento = dataNascimento;
+	}
+	
+	public Pessoa() {
+		super();
+	}
+	
 	public String getNome() {
 		return nome;
 	}

@@ -11,11 +11,11 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class Jogo {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private Integer id;
-	
+
 	@OneToOne
 	@JoinColumn(name = "idTimeCasa")
 	private Time timeCasa;
@@ -30,7 +30,8 @@ public class Jogo {
 	@JoinColumn(name = "idJuiz")
 	private Juiz juiz;
 	private String placar;
-		
+	private Date dataDoJogo;
+
 	public Integer getId() {
 		return id;
 	}
@@ -87,5 +88,31 @@ public class Jogo {
 		this.dataDoJogo = dataDoJogo;
 	}
 
-	private Date dataDoJogo;
+	public Jogo(Integer id, Time timeCasa, Time timeVisitante, String nomeCampo, Juiz juiz, String placar,
+			Date dataDoJogo) {
+		super();
+		this.id = id;
+		this.timeCasa = timeCasa;
+		this.timeVisitante = timeVisitante;
+		this.nomeCampo = nomeCampo;
+		this.juiz = juiz;
+		this.placar = placar;
+		this.dataDoJogo = dataDoJogo;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Jogo j = (Jogo) obj;
+		Boolean retorno = false;
+		if (this.getTimeCasa() == j.getTimeCasa()) {
+			if (this.getTimeVisitante() == j.getTimeVisitante()) {
+				if (this.getDataDoJogo() == j.getDataDoJogo()) {
+					retorno = true;
+				}
+			}
+		}
+
+		return retorno;
+	}
+
 }

@@ -75,5 +75,15 @@ public class Time {
 	public void setTecnico(Tecnico tecnico) {
 		this.tecnico = tecnico;
 	}
-	
+
+	public Time(Integer id, String nome, String estado, Integer pontos, Tecnico tecnico, List<Jogador> jogadores) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.estado = estado;
+		this.pontos = pontos;
+		this.tecnico = tecnico;
+		this.jogadores = jogadores;
+	}
+		
 }
