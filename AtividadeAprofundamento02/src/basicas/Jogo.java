@@ -30,7 +30,7 @@ public class Jogo {
 	@JoinColumn(name = "idJuiz")
 	private Juiz juiz;
 	private String placar;
-	private Date dataDoJogo;
+	private String dataDoJogo;
 
 	public Integer getId() {
 		return id;
@@ -80,21 +80,31 @@ public class Jogo {
 		this.placar = placar;
 	}
 
-	public Date getDataDoJogo() {
+	public String getDataDoJogo() {
 		return dataDoJogo;
 	}
 
-	public void setDataDoJogo(Date dataDoJogo) {
+	public void setDataDoJogo(String dataDoJogo) {
 		this.dataDoJogo = dataDoJogo;
 	}
 
 	public Jogo(Integer id, Time timeCasa, Time timeVisitante, String nomeCampo, Juiz juiz, String placar,
-			Date dataDoJogo) {
+			String dataDoJogo) {
 		super();
 		this.id = id;
 		this.timeCasa = timeCasa;
 		this.timeVisitante = timeVisitante;
 		this.nomeCampo = nomeCampo;
+		this.juiz = juiz;
+		this.placar = placar;
+		this.dataDoJogo = dataDoJogo;
+	}
+
+	public Jogo(Integer id, Time timeCasa, Time timeVisitante, Juiz juiz, String placar, String dataDoJogo) {
+		super();
+		this.id = id;
+		this.timeCasa = timeCasa;
+		this.timeVisitante = timeVisitante;
 		this.juiz = juiz;
 		this.placar = placar;
 		this.dataDoJogo = dataDoJogo;
