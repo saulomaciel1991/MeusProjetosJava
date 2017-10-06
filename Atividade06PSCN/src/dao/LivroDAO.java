@@ -5,7 +5,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import basicas.Editora;
 import basicas.Livro;
 
 public class LivroDAO {
